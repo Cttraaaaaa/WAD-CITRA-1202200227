@@ -38,6 +38,10 @@ CREATE TABLE `showroom_nama_table` (
   `status_pembayaran` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+INSERT INTO `showroom_nama_table` (`id_mobil`,`nama_mobil`,`pemilik_mobil`,`merk_mobil`,`tanggal_beli`,`deskripsi`,`foto_mobil`,`status_pembayaran`) VALUES
+(1,'Honda HRV','citra_1202200227','HRV',11/10/2022,'asyap','HRV.png','lunas');
 --
 -- Indexes for dumped tables
 --

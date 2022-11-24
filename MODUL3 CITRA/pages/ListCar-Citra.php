@@ -1,3 +1,10 @@
+<?php 
+    include('connector.php') ;
+    $query = "SELECT * FROM showroom_nama_table";
+    $result = mysqli_query($connect,$query);
+    $data = mysqli_num_rows($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
         <head>
@@ -28,13 +35,33 @@
                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="pages/Home-Citra.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="Home-Citra.php">Home</a>
                           </li>
                           <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#ListCar-Citra.php">My Car</a>
+                          <a class="nav-link active" aria-current="page" href="ListCar-Citra.php">My Car</a>
                       </div>
                     </div>
                   </nav>
                 <!-- navbar -->
-        </body>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo "<div class='card cardcontent' style='width: 18rem;'>
+                <img src='../assets/images/" . $row["foto_mobil"] . "' class='card-img-top' alt='fotomobil' style='padding: 16px;'>
+                <div class='card-body'>
+                <h5 class='card-title'>" . $row["nama_mobil"] . "</h5>
+                <p class='card-text'>" . substr($row["deskripsi"], 0, 50) . '...' . "</p>
+                <span class='d-flex'>
+                <a href='Detail-Citra.php?id=" . $row["id_mobil"] . "'class='btn btn-primary' style='font-family: Poppins; border-radius: 100px; width:140px; height: 36px;'>Detail</a>
+                <a href='delete.php?id=" . $row["id_mobil"] . "' class='btn btn-primary' style='font-family: Poppins; border-radius: 100px; width:140px; height: 36px; margin-left:20px;'>Delete</a>
+                </span>
+                </div>
+                </div>";
+              }
+            } else {
+              echo "0 results";
+            }
+            ?>
+</body>
 </html>
+
