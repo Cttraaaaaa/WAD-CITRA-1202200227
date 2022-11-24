@@ -12,7 +12,7 @@
         $tujuan = "img/".$input_pg;
         move_uploaded_file($input_pg, $tujuan);
 
-        $query = "INSERT INTO showroom_nama_table VALUES ('', '$nama_mobil', '$pemilik_mobil','$merk_mobil', '$tanggal_mobil', '$deskripsi','$foto_mobil' ,'$status_pembayaran')";
+        $query = "INSERT INTO showroom_nama_table VALUES ('$nama_mobil', '$pemilik_mobil','$merk_mobil', '$tanggal_mobil', '$deskripsi','$foto_mobil' ,'$status_pembayaran')";
         $insert = mysqli_query($connect, $query);
     
         header('Location: Add-Citra.php');

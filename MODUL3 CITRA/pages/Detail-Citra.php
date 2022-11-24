@@ -3,19 +3,19 @@
     include('connector.php') ;
     $id=$_GET['id'];
     $query = "SELECT * FROM showroom_nama_table WHERE id_mobil = '$id'";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($connect, $query);
 
     
     if (isset($_POST['edit'])){
         $nama_mobil = $_POST['nama_mobil'];
-        $pemilik_mobil = $_POST['name'];
+        $pemilik_mobil = $_POST['nama_pemilik'];
         $merk_mobil = $_POST['merk'];
         $tanggal_beli = $_POST['tgl_beli'];
         $deskripsi = $_POST['deskripsi'];
         $status_pembayaran = $_POST['stat'];
     
         $edit = "UPDATE showroom_nama_table SET nama_mobil='$nama_mobil', pemilik_mobil='$pemilik_mobil' , merk_mobil='$merk_mobil' , tanggal_beli='$tanggal_beli' , deskripsi='$deskripsi', status_pembayaran='$status_pembayaran' where id_mobil = '$id' ";
-        $update = mysqli_query($conn, $edit);
+        $update = mysqli_query($connect, $edit);
 
         header('Location: ListCar-Citra.php');
     }
@@ -59,9 +59,9 @@
                     ?>
                 <h2 class="text-center pb-2 "><b>Detail Mobil</b></h2>
                 <div class="col text-center">
-                <img class="card-img-top image-awal" src="<?php echo $data['foto_mobil'] ?>"
-                                alt="<?php echo $data['foto_mobil'] ?>"> 
-                    <hr style='height: 3px; border-radius: 5px; color: rgb(0, 106, 255);'>
+                <img class="card-img-top" src="<?php echo $data['input_pg'] ?>"
+                                alt="<?php echo $data['input_pg'] ?>"> 
+                    <hr style='height: 3px; border-radius: 5px; color: rgb(120, 229, 253);'>
                 </div>
 
                 <p class="card-text"><b>Nama Mobil</b></p>
@@ -71,7 +71,7 @@
                 <p class="card-text"><?= $data['nama_pemilik'];?></p>
 
                 <p class="card-text"><b>Merk Mobil</b></p>
-                <p class="card-text"><?= $data['merk_mobil'];?></p>
+                <p class="card-text"><?= $data['merk'];?></p>
 
                 <p class="card-text"><b>Tanggal Beli</b></p>
                 <p class="card-text"><?= $data['tgl_beli'];?></p>
