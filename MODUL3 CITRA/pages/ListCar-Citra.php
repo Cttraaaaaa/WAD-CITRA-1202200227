@@ -1,7 +1,7 @@
 <?php 
     include('connector.php') ;
     $query = "SELECT * FROM showroom_nama_table";
-    $result = mysqli_query($connect,$query);
+    $result = mysqli_query($conn,$query);
     $data = mysqli_num_rows($result);
 ?>
 

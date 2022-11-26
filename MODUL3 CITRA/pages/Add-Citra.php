@@ -1,24 +1,3 @@
-<?php 
-    include('connector.php') ;
-
-    if (isset($_POST['proses'])){
-        $nama_mobil = $_POST['nama_mobil'];
-        $pemilik_mobil = $_POST['nama_pemilik'];
-        $merk_mobil = $_POST['merk'];
-        $tanggal_beli = $_POST['tgl_beli'];
-        $deskripsi = $_POST['deskripsi'];
-        $status_pembayaran = $_POST['stat'];
-        $foto_mobil = $_FILES['input_pg']['nama'];
-        $tujuan = "img/".$input_pg;
-        move_uploaded_file($input_pg, $tujuan);
-
-        $query = "INSERT INTO showroom_nama_table VALUES ('$nama_mobil', '$pemilik_mobil','$merk_mobil', '$tanggal_mobil', '$deskripsi','$foto_mobil' ,'$status_pembayaran')";
-        $insert = mysqli_query($connect, $query);
-    
-        header('Location: Add-Citra.php');
-    }
-?>
-
 <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -51,8 +30,9 @@
                             </div>
                         </nav>
                 <!-- navbar -->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <div class="container mt-5" style="width:50%">
-                <form action="create.php" method="post">
+                <form action="insert.php" method="POST">
                     <h2> Tambah Mobil </h2>
                     <a> Tambah baru mobil anda sekarang ! </a>
                     <br>
@@ -61,56 +41,56 @@
                         <label for="exampleFormControlInput1" class="Form-label">
                             Nama Mobil
                         </label>
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_mobil">
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_mobil" id="nama_mobil">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
                             Nama Pemilik
                         </label>
-                        <input type="text" class="form-control" placeholder="Nama-nim" name="nama_pemilik">
+                        <input type="text" class="form-control" placeholder="Nama-nim" name="nama_pemilik" id="nama_pemilik">
                     </div>
                     <div class="mb-3"> 
                         <label for="exampleFormControlInput1" class="Form-label">
                             Merk
                         </label>
-                        <input type="text" class="form-control" placeholder="BMW" name="merk">
+                        <input type="text" class="form-control" placeholder="BMW" name="merk" id="merk">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
                             tanggal Beli
                         </label>
-                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="tgl_beli">
+                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="tgl_beli" id="tgl_beli">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
                             Deskripsi
                         </label>
-                        <textarea class="form-control" rows="3" name="deskripsi">
+                        <textarea class="form-control" rows="3" name="deskripsi" id="deskripsi">
                         </textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
                             Foto
                         </label>
-                        <input type="file" class="form-control" name="input_pg">
+                        <input type="file" class="form-control" name="foto_mobil" id="foto_mobil">
                     </div>
                     
                     <b> Status Pembayaran </b> 
                     <br>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stat" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="stat" id="lunas" value="lunas">
+                    <label class="form-check-label" for="lunas">
                         Lunas
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stat" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="stat" id="belum" value="belum" checked>
+                    <label class="form-check-label" for="belum">
                         Belum lunas
                     </label>
                     </div>
                     <br>
-                    <input type="submit" class="btn btn-primary" value="Selesai">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Selesai">
                 </form>
             </div>
 </body>

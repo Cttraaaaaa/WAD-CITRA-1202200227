@@ -3,10 +3,10 @@
     include('connector.php') ;
     $id=$_GET['id'];
     $query = "SELECT * FROM showroom_nama_table WHERE id_mobil = '$id'";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($conn, $query);
 
     
-    if (isset($_POST['edit'])){
+    if (isset($_POST['submit'])){
         $nama_mobil = $_POST['nama_mobil'];
         $pemilik_mobil = $_POST['nama_pemilik'];
         $merk_mobil = $_POST['merk'];
@@ -14,8 +14,8 @@
         $deskripsi = $_POST['deskripsi'];
         $status_pembayaran = $_POST['stat'];
     
-        $edit = "UPDATE showroom_nama_table SET nama_mobil='$nama_mobil', pemilik_mobil='$pemilik_mobil' , merk_mobil='$merk_mobil' , tanggal_beli='$tanggal_beli' , deskripsi='$deskripsi', status_pembayaran='$status_pembayaran' where id_mobil = '$id' ";
-        $update = mysqli_query($connect, $edit);
+        $edit = "UPDATE showroom_nama_table SET nama_mobil='$nama_mobil', nama_pemilik='$pemilik_mobil' , merk='$merk_mobil' , tgl_beli='$tanggal_beli' , deskripsi='$deskripsi', stat='$status_pembayaran' where id_mobil = '$id' ";
+        $update = mysqli_query($conn, $edit);
 
         header('Location: ListCar-Citra.php');
     }
