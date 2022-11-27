@@ -12,9 +12,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modul 3</title>
-            <link rel="shortcut icon" type="image" href="./image/logo2.png">
             <link rel="stylesheet" href="../style/style1.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
             <!-- bootstrap links -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <!-- bootstrap links -->
@@ -46,14 +44,15 @@
             <?php
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='card cardcontent' style='width: 18rem;'>
-                <img src='../assets/images/" . $row["foto_mobil"] . "' class='card-img-top' alt='fotomobil' style='padding: 16px;'>
+                echo "<div class='card card-content' style='width: 18rem;'>
+                <img src=' img/" . $row["foto_mobil"] . "' class='card-img' alt='foto_mobil' style='padding: 16px;'>
                 <div class='card-body'>
-                <h5 class='card-title'>" . $row["nama_mobil"] . "</h5>
+                <h3 class='card-title'>" . $row["nama_mobil"] . "</h3>
                 <p class='card-text'>" . substr($row["deskripsi"], 0, 50) . '...' . "</p>
                 <span class='d-flex'>
-                <a href='Detail-Citra.php?id=" . $row["id_mobil"] . "'class='btn btn-primary' style='font-family: Poppins; border-radius: 100px; width:140px; height: 36px;'>Detail</a>
-                <a href='delete.php?id=" . $row["id_mobil"] . "' class='btn btn-primary' style='font-family: Poppins; border-radius: 100px; width:140px; height: 36px; margin-left:20px;'>Delete</a>
+                <br><br><br>
+                <a href='Detail-Citra.php?id=" . $row["id_mobil"] . "'class='btn btn-primary' style='font-family: Poppins; border-radius: 80px; width: 100px;px; height: 36px;'>Detail</a>
+                <a href='delete.php?id=" . $row["id_mobil"] . "' class='btn btn-primary' style='font-family: Poppins; border-radius: 80px; width:100px; height: 36px; margin-left:20px;'>Delete</a>
                 </span>
                 </div>
                 </div>";

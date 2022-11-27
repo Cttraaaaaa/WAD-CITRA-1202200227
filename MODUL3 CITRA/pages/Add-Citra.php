@@ -6,7 +6,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modul 3</title>
             <link rel="stylesheet" href="style1.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
             <!-- bootstrap links -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <!-- bootstrap links -->
@@ -32,45 +31,45 @@
                 <!-- navbar -->
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <div class="container mt-5" style="width:50%">
-                <form action="insert.php" method="POST">
-                    <h2> Tambah Mobil </h2>
+                <form action="insert.php" method="POST" enctype="multipart/form-data">
+                    <h2> <b>Tambah Mobil</b> </h2>
                     <a> Tambah baru mobil anda sekarang ! </a>
                     <br>
                     <br>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
-                            Nama Mobil
+                            <b>Nama Mobil</b>
                         </label>
                         <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_mobil" id="nama_mobil">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
-                            Nama Pemilik
+                            <b>Nama Pemilik</b>
                         </label>
-                        <input type="text" class="form-control" placeholder="Nama-nim" name="nama_pemilik" id="nama_pemilik">
+                        <input type="text" class="form-control" placeholder="Nama-nim" name="pemilik_mobil" id="pemilik_mobil">
                     </div>
                     <div class="mb-3"> 
                         <label for="exampleFormControlInput1" class="Form-label">
-                            Merk
+                            <b>Merk</b>
                         </label>
-                        <input type="text" class="form-control" placeholder="BMW" name="merk" id="merk">
+                        <input type="text" class="form-control" placeholder="BMW" name="merk_mobil" id="merk_mobil">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
-                            tanggal Beli
+                            <b>tanggal Beli</b>
                         </label>
-                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="tgl_beli" id="tgl_beli">
+                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="tanggal_beli" id="tanggal_beli">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="Form-label">
-                            Deskripsi
+                            <b>Deskripsi</b>
                         </label>
                         <textarea class="form-control" rows="3" name="deskripsi" id="deskripsi">
                         </textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="Form-label">
-                            Foto
+                        <label for="foto_mobil" class="Form-label">
+                            <b>Foto</b>
                         </label>
                         <input type="file" class="form-control" name="foto_mobil" id="foto_mobil">
                     </div>
@@ -78,13 +77,13 @@
                     <b> Status Pembayaran </b> 
                     <br>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stat" id="lunas" value="lunas">
+                    <input class="form-check-input" type="radio" name="status_pembayaran" id="lunas" value="lunas">
                     <label class="form-check-label" for="lunas">
                         Lunas
                     </label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="stat" id="belum" value="belum" checked>
+                    <input class="form-check-input" type="radio" name="status_pembayaran" id="belum" value="belum" checked>
                     <label class="form-check-label" for="belum">
                         Belum lunas
                     </label>

@@ -41,7 +41,9 @@ CREATE TABLE `showroom_nama_table` (
 
 
 INSERT INTO `showroom_nama_table` (`id_mobil`,`nama_mobil`,`pemilik_mobil`,`merk_mobil`,`tanggal_beli`,`deskripsi`,`foto_mobil`,`status_pembayaran`) VALUES
-(1,'Honda HRV','citra_1202200227','HRV',11/10/2022,'asyap','HRV.png','lunas');
+(11,'kijang','citra_1202200227','hrv',11/10/2022,'kijang mengapung','HRV.png','belum lunas');
+(3,'kijang','rr_1202200224','kijang',11/10/2022,'a mengapung','logo-ead.png','belum lunas');
+(4,'kijang','aa_1202200225','suzuki',11/10/2022,'k mengapung','starlight.jpg','belum lunas');
 --
 -- Indexes for dumped tables
 --
