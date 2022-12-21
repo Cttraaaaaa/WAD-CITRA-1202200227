@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function register()
+    public function login()
     {
-        $data['title'] = 'Register';
-        return view('users/register', $data);
+        $data['title'] = 'Login';
+        return view('users/login', $data);
     }
 
     public function register_action(Request $request)
@@ -37,10 +37,10 @@ class UserController extends Controller
     }
 
 
-    public function login()
+    public function register()
     {
-        $data['title'] = 'Login';
-        return view('users/login', $data);
+        $data['title'] = 'Register';
+        return view('users/register', $data);
     }
 
     public function login_action(Request $request)

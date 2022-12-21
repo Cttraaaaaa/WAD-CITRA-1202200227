@@ -12,7 +12,7 @@ class showroomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function add(Request $request)
     {
         $data['title'] = 'showroom';
         $data['q'] = $request->get('q');
@@ -25,10 +25,10 @@ class showroomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('views.add');
-    }
+    // public function show()
+    // {
+    //     return view('views.add');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -52,7 +52,7 @@ class showroomController extends Controller
             'status' => $request -> status
         ]);
 
-        return redirect('/views');
+        return redirect('views.add');
     }
 
     /**
@@ -72,12 +72,12 @@ class showroomController extends Controller
      * @param  \App\Models\showroom  $showroom
      * @return \Illuminate\Http\Response
      */
-    public function edit(showroom $showroom,$user_id)
-    {
-        $showroom = showroom::find($user_id);
+    // public function edit(showroom $showroom,$user_id)
+    // {
+    //     $showroom = showroom::find($user_id);
 
-        return view('views.edit', compact('product'));
-    }
+    //     return view('views.edit', compact('product'));
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -107,7 +107,7 @@ class showroomController extends Controller
             'status' => $request -> status
         ]);
 
-        return redirect('/product')->with('success', 'Customer updated succesfully');
+        return redirect('/views')->with('success', 'updated succesfully');
     }
 
     /**

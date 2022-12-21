@@ -1,3 +1,4 @@
+extends ('app')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,7 @@
               <h1>SELAMAT DATANG DI SHOWROOM CITRA </h1>
               <p>Silahkan melihat mobil yang diinginkan <img src="{{ asset('img/HRV.png') }}" alt="" style="width: 500px;margin-left: 750px; border-radius: 10px;"></p>
             <div class="gap-2 col-6 mx-auto">
-              <a class="btn btn-primary" href={{ route ('') }}>MyCar</a>
+              <a class="btn btn-primary">MyCar</a>
             </div>
           </div>      
         </div>
